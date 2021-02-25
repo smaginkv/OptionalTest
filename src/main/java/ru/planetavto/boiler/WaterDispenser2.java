@@ -4,9 +4,8 @@ import com.sun.istack.internal.Nullable;
 
 import java.util.Optional;
 
-public class WaterDispenser1 implements IWaterDispenser {
-    @Nullable
-    private CupOfWater mainCup;
+public class WaterDispenser2 implements IWaterDispenser {
+    @Nullable private CupOfWater mainCup;
 
     @Override
     public void setAvailability(@Nullable CupOfWater mainCup) {
@@ -15,6 +14,6 @@ public class WaterDispenser1 implements IWaterDispenser {
 
     @Override
     public CupOfWater getCupOfWater() {
-        return Optional.ofNullable(mainCup).orElse(new CupOfWater());
+        return Optional.ofNullable(mainCup).orElseGet(()->new CupOfWater());
     }
 }
