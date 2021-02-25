@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WaterDispenser2Test {
+public class WaterDispenser3Test {
     private IWaterDispenser waterDispenser;
 
     @BeforeEach
     public void setUp() {
-        waterDispenser = new WaterDispenser2();
+        waterDispenser = new WaterDispenser3();
     }
 
     @Test
@@ -19,11 +19,10 @@ public class WaterDispenser2Test {
         assertNotNull(waterDispenser.getCupOfWater());
     }
 
-
     @Test
     public void testMainNotAvailable() {
         waterDispenser.setAvailability(null);
-        assertNotNull(waterDispenser.getCupOfWater());
+        assertThrows(IllegalStateException.class, ()->  waterDispenser.getCupOfWater());
     }
 
 }
