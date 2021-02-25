@@ -4,7 +4,7 @@ import com.sun.istack.internal.Nullable;
 
 import java.util.Optional;
 
-public class RainWaterCleaner implements IRainWaterCleaner {
+public class RainWaterCleaner implements IRainWaterCleanerInput, IRainWaterCleanerOutput {
     @Nullable
     private RainWater rainWater;
 
